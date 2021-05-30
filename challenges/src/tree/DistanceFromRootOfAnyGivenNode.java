@@ -28,11 +28,12 @@ public class DistanceFromRootOfAnyGivenNode {
             dfsRight = dfsRight(root.right, value, 1);
         }
 
-        int distance = Math.max(dfsLeft, dfsRight);
-
-        if(distance == 0) return -1;
-
-        return distance;
+        if(dfsLeft != 0){
+            dfsLeft *= (-1);
+            return dfsLeft;
+        } else {
+            return dfsRight;
+        }
     }
 
     private int dfsLeft(Node node, int value, int distance){
@@ -66,12 +67,13 @@ public class DistanceFromRootOfAnyGivenNode {
         root.left = new Node(2);
         root.right = new Node(6);
         root.right.right = new Node(7);
+        root.right.right.left = new Node(8);
 
         root.left.right = new Node(3);
         root.left.right.left = new Node(4);
         root.left.right.left.left = new Node(5);
 
-        System.out.println(program.getDistanceFromRoot(root, 7));
+        System.out.println(program.getDistanceFromRoot(root, 8));
     }
 
 
