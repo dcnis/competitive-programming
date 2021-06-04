@@ -140,9 +140,14 @@ public class OpenLock {
         String[] deadends = new String[]{"8887","8889","8878","8898","8788","8988","7888","9888"};
         System.out.println(openLock(deadends, "8888"));
 
-        // should return 8
+        // should return -1
         deadends = new String[]{"0000"};
         System.out.println(openLock(deadends, "8888"));
+
+        // should return 3
+        deadends = new String[]{};
+        System.out.println(openLock(deadends, "0007"));
+
 
     }
 
