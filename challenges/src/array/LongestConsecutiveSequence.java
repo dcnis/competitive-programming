@@ -20,8 +20,8 @@ public class LongestConsecutiveSequence {
             // find the min
             if(!set.contains(num-1)){
                 int value = num;
-                int count = 0;
-                while(set.contains(value)){
+                int count = 1;
+                while(set.contains(value+1)){
                     count++;
                     value++;
                 }
