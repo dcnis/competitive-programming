@@ -1,9 +1,12 @@
 package scratchPad;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Fundamentals {
 
@@ -18,11 +21,7 @@ public class Fundamentals {
 
     public static void main(String[] args) {
 
-        System.out.println(String.format("%04d", Integer.valueOf(9000)));
 
-        StringBuilder sb = new StringBuilder("9000");
-        sb.replace(3, 4, "1");
-        System.out.println(sb.toString());
     }
 
 }
