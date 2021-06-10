@@ -16,41 +16,36 @@ public class MyCalenderI {
     public boolean book(int start, int end) {
 
         Integer[] entry = new Integer[]{start, end};
-        boolean added = treeSet.add(entry);
+        boolean couldAdd = treeSet.add(entry);
 
-        if(!added){
-            return false;
+        if(!couldAdd) return false;
+
+        if(treeSet.size() == 0){
+            treeSet.add(entry);
+            return true;
         }
 
-        if(treeSet.size() == 1) return true;
-
-        Integer[] lowerThanStart = treeSet.lower(entry);
-
-        if(lowerThanStart != null){
-            if(entry[0] > lowerThanStart[0] && entry[0] < lowerThanStart[1]){
+        // getLower and check
+        Integer[] lower = treeSet.lower(entry);
+        if(lower != null){
+            // do Check
+            if(entry[0] < lower[1] && lower[0] < entry[1]){
                 treeSet.remove(entry);
                 return false;
             }
+        }
 
-            Integer[] higherThanEnd = treeSet.higher(entry);
-
-            if(higherThanEnd != null){
-                if(higherThanEnd[0] < entry[1]){
-                    treeSet.remove(entry);
-                    return false;
-                }
-            }
-
-        } else {
-            Integer[] higherThanEnd = treeSet.higher(entry);
-
-            if(higherThanEnd != null){
-                if(higherThanEnd[0] < entry[1]){
-                    treeSet.remove(entry);
-                    return false;
-                }
+        Integer[] higher = treeSet.higher(entry);
+        if(higher != null){
+            // do check
+            if(entry[0] < higher[1] && higher[0] < entry[1]){
+                treeSet.remove(entry);
+                return false;
             }
         }
+
+
+
 
         return true;
 
