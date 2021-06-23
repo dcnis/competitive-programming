@@ -20,8 +20,8 @@ public class ListOfDepth {
         root.right.left = new Node(5);
         root.right.right = new Node(6);
 
-        System.out.print("expected: true");
-        System.out.println(" -> actual: " + program.getListOfDepth(root));
+        System.out.println("[[0], [1, 4], [2, 3, 5, 6]] = expected");
+        System.out.println(program.getListOfDepth(root) + " = actual");
     }
 
     public List<List<Integer>> getListOfDepth(Node root) {
