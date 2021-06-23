@@ -1,6 +1,7 @@
 package graph;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -22,6 +23,9 @@ public class ListOfDepth {
 
         System.out.println("[[0], [1, 4], [2, 3, 5, 6]] = expected");
         System.out.println(program.getListOfDepth(root) + " = actual");
+        System.out.println();
+        System.out.println("[[0], [1, 4], [2, 3, 5, 6]] = expected");
+        System.out.println(program.getListOfDepthSolution2(root) + " = actual");
     }
 
     public List<List<Integer>> getListOfDepth(Node root) {
@@ -61,6 +65,40 @@ public class ListOfDepth {
 
 
         return solution;
+    }
+
+    public List<List<Integer>> getListOfDepthSolution2(Node root) {
+
+        List<LinkedList<Node>> solution = new ArrayList<>();
+
+        LinkedList<Node> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while(!queue.isEmpty()){
+            solution.add(queue);
+            LinkedList<Node> parents = queue;
+            queue = new LinkedList<>();
+
+            for(Node node : parents){
+                if(node.left != null){
+                    queue.add(node.left);
+                }
+                if(node.right != null){
+                    queue.add(node.right);
+                }
+            }
+        }
+
+        List<List<Integer>> result = new ArrayList<>();
+        solution.forEach(row ->{
+            List<Integer> list = new ArrayList<>();
+            for(Node node: row){
+                list.add(node.value);
+            }
+            result.add(list);
+        });
+
+        return result;
     }
 
     static class Node {
