@@ -1,6 +1,7 @@
 package datastructures;
 
-public class Stack {
+
+public class Stack<T> {
 
     Node head;
     int currentSize;
@@ -10,16 +11,16 @@ public class Stack {
     }
 
     class Node {
-        int value;
+        T value;
         Node next;
 
-        public Node(int value){
+        public Node(T value){
             this.value = value;
         }
 
     }
 
-    public void push(int value){
+    public void push(T value){
         Node newNode = new Node(value);
 
         currentSize++;
@@ -31,16 +32,16 @@ public class Stack {
         }
     }
 
-    public Integer pop(){
+    public T pop(){
         if(head == null) return null;
 
-        int returnValue = head.value;
+        T returnValue = head.value;
         head = head.next;
         currentSize--;
         return returnValue;
     }
 
-    public Integer peek(){
+    public T peek(){
         if(head == null) return null;
 
         return head.value;
@@ -51,7 +52,7 @@ public class Stack {
     }
 
     public static void main(String[] args) {
-        Stack stack = new Stack();
+        Stack<Integer> stack = new Stack<>();
         stack.push(1);
         stack.push(2);
         stack.push(3);
