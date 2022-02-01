@@ -13,27 +13,29 @@ public class CombinationLock {
         Queue<String> q = new LinkedList<>();
         visited.add(startCombination);
         q.offer(startCombination);
+
         int count = 0;
+
         while(!q.isEmpty()) {
             int size = q.size();
 
             for(int i = 0; i < size; i++){
                 // poll all the elements in queue
-                String choice = q.poll();
+                String element = q.poll();
 
-                if(target.equals(choice)){
+                if(target.equals(element)){
                     return count;
                 }
 
-                String firstUp = upOne(choice, 0);
-                String secondUp = upOne(choice, 1);
-                String thirdUp = upOne(choice, 2);
-                String fourthUp = upOne(choice, 3);
+                String firstUp = upOne(element, 0);
+                String secondUp = upOne(element, 1);
+                String thirdUp = upOne(element, 2);
+                String fourthUp = upOne(element, 3);
 
-                String firstDown = downOne(choice, 0);
-                String secondDown = downOne(choice, 1);
-                String thirdDown = downOne(choice, 2);
-                String fourthDown = downOne(choice, 3);
+                String firstDown = downOne(element, 0);
+                String secondDown = downOne(element, 1);
+                String thirdDown = downOne(element, 2);
+                String fourthDown = downOne(element, 3);
 
                 if(!visited.contains(firstUp)){
                     q.offer(firstUp);
@@ -101,7 +103,7 @@ public class CombinationLock {
 
     public static void main(String[] args) {
         CombinationLock solution = new CombinationLock();
-        System.out.println(solution.openLock("1100", "1111"));
+        System.out.println(solution.openLock("0000", "1090"));
     }
 
 
