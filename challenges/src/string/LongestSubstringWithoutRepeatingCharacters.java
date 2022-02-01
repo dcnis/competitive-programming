@@ -19,31 +19,24 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
         if(s == null || s.isEmpty()) return 0;
 
-        char[] substring = s.toCharArray();
+        int i = 0, j = 0;
+        int max = 0;
+        Set<Character> set = new HashSet<>();
 
+        while(i < s.length()){
 
-        int longestSubstringSoFar = Integer.MIN_VALUE;
-
-        for(int i = 0; i < substring.length; i++){
-            int k = i;
-            Set<Character> set = new HashSet<>();
-            int longestSubstring = 0;
-            while(k < substring.length){
-                if(set.contains(substring[k])){
-                    break;
-                } else {
-                    set.add(substring[k]);
-                    longestSubstring++;
-                    k++;
-                }
+            if(!set.contains(s.charAt(i))){
+                set.add(s.charAt(i));
+                i++;
+                max = Math.max(max, set.size());
+            } else {
+                set.remove(s.charAt(j));
+                j++;
             }
 
-            if(longestSubstring > longestSubstringSoFar){
-                longestSubstringSoFar = longestSubstring;
-            }
         }
 
-        return longestSubstringSoFar;
+        return max;
     }
 
 }
