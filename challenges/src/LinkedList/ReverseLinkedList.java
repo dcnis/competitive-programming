@@ -12,23 +12,24 @@ public class ReverseLinkedList {
         }
     }
 
-    public static Node reverseLinkedList(Node head){
+    public static Node reverseLinkedList(Node node){
 
-        Node p1 = null;
-        Node p2 = head;
-        Node p3 = head;
+        Node prev = null;
 
-        while(p2 != null){
-            p3 = p2.next;
-            p2.next = p1;
-            p1 = p2;
-            p2 = p3;
+        while(node != null){
+
+            Node temp = node.next;
+            node.next = prev;
+            prev = node;
+            node = temp;
+
         }
 
-        return p1;
+        return prev;
     }
 
     public static void main(String[] args) {
+        System.out.println("0->1->2->3->4->5->null");
         Node root = new Node(0);
         root.next = new Node(1);
         root.next.next = new Node(2);
