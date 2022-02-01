@@ -1,5 +1,7 @@
 package string;
 
+import utils.Tag;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,7 +11,10 @@ import java.util.Set;
 * */
 public class LongestSubstringWithoutRepeatingCharacters {
 
+
     public static void main(String[] args) {
+        System.out.printf("Tags: %s, %s%n", Tag.SLIDING_WINDOW, Tag.STRINGS);
+
         System.out.println(lengthOfLongestSubstring("hello")); // 3
         System.out.println(lengthOfLongestSubstring("")); // 0
         System.out.println(lengthOfLongestSubstring("aab")); //2
