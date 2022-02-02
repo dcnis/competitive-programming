@@ -2,9 +2,12 @@ package utils;
 
 public class Utils {
 
-    public int[] readArray(String arrayAsString){
-        String removeBrackets = arrayAsString.substring(1, arrayAsString.length()-1);
-        String[] splitted = removeBrackets.split(",");
+    public static int[] readArray(String arrayAsString){
+
+        if(arrayAsString.contains("[")){
+            arrayAsString = arrayAsString.substring(1, arrayAsString.length()-1);
+        }
+        String[] splitted = arrayAsString.split(",");
 
         int[] array = new int[splitted.length];
         for(int i = 0; i < splitted.length; i++){
@@ -13,7 +16,7 @@ public class Utils {
         return array;
     }
 
-    public int[][] read2DArray(String twoDarray){
+    public static int[][] read2DArray(String twoDarray){
         String removeBrackets = twoDarray.substring(1, twoDarray.length()-1);
         String[] splitted = removeBrackets.split("]");
         int[][] result = new int[splitted.length][];
@@ -21,7 +24,7 @@ public class Utils {
         for(int i = 0; i < splitted.length; i++){
             splitted[i] = splitted[i].replace(",[", "[");
             splitted[i] += "]";
-            result[i] = this.readArray(splitted[i]);
+            result[i] = readArray(splitted[i]);
 
         }
 
