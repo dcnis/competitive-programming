@@ -19,12 +19,35 @@ public class FibonacciBottomUp {
         return arr[nth];
     }
 
+
+
+
+
+    public static int fibo2(int n){
+
+        if(n == 0) return 0;
+        if(n == 1) return 1;
+        if(n == 2) return 1;
+
+        int[] tabu = new int[n+1];
+        tabu[0] = 0;
+        tabu[1] = 1;
+        tabu[2] = 1;
+
+        for(int i = 3; i <= n; i++){
+            tabu[i] = tabu[i-1] + tabu[i-2];
+        }
+
+        return tabu[n];
+    }
+
+
     public static void main(String[] args) {
-        System.out.println(fibo(3));
-        System.out.println(fibo(4));
-        System.out.println(fibo(5));
-        System.out.println(fibo(6));
-        System.out.println(fibo(7));
+        System.out.println(fibo2(3)); // 2
+        System.out.println(fibo2(4)); // 3
+        System.out.println(fibo2(5)); // 5
+        System.out.println(fibo2(6)); // 8
+        System.out.println(fibo2(7)); // 13
     }
 
 }
