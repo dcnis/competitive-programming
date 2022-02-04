@@ -1,5 +1,8 @@
 package tree;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 public class InvertBinaryTree {
 
     public static void invertBinaryTree(BinaryTree tree) {
@@ -25,6 +28,36 @@ public class InvertBinaryTree {
 
         node.left = right;
         node.right = left;
+
+        return node;
+    }
+
+    public static BinaryTree invertBinaryTreeIteratively(BinaryTree node) {
+
+        if(node == null) return null;
+        if(node.left == null && node.right == null) return node;
+
+        Deque<BinaryTree> stack = new LinkedList<>();
+        stack.push(node);
+
+        while(!stack.isEmpty()){
+
+            BinaryTree currNode = stack.pop();
+            if(currNode.left != null){
+                stack.push(currNode.left);
+            }
+
+            if(currNode.right != null){
+                stack.push(currNode.right);
+            }
+
+
+            BinaryTree temp = currNode.left;
+            currNode.left = currNode.right;
+            currNode.right = temp;
+
+
+        }
 
         return node;
     }
