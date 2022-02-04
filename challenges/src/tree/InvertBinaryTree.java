@@ -16,6 +16,19 @@ public class InvertBinaryTree {
         tree.right = temp;
     }
 
+    public static BinaryTree invertBinaryTree2(BinaryTree node) {
+        if(node == null) return null;
+        if(node.left == null && node.right == null) return node;
+
+        BinaryTree left = invertBinaryTree2(node.left);
+        BinaryTree right = invertBinaryTree2(node.right);
+
+        node.left = right;
+        node.right = left;
+
+        return node;
+    }
+
     static class BinaryTree {
         public int value;
         public BinaryTree left;
@@ -31,8 +44,10 @@ public class InvertBinaryTree {
         root.left = new BinaryTree(3);
         root.right = new BinaryTree(2);
 
-        invertBinaryTree(root);
-        System.out.println(root);
+        BinaryTree root2 = invertBinaryTree2(root);
+        System.out.println(root2);
+
+
     }
 
 }
