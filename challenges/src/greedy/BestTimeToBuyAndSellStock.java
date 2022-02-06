@@ -1,4 +1,4 @@
-package DP;
+package greedy;
 
 import utils.Utils;
 
