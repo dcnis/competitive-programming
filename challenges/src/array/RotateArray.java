@@ -24,8 +24,47 @@ public class RotateArray {
         }
     }
 
+    public void rotate1(int[] nums, int k) {
+
+        if(nums.length == 1) return;
+
+        int[] res = new int[nums.length];
+
+        for(int i = 0; i < nums.length;i++){
+
+                int index = ((i+k)%(nums.length));
+                res[index] = nums[i];
+
+        }
+
+        for(int i = 0; i < nums.length;i++){
+            nums[i] = res[i];
+        }
+    }
+
+    public static void rotateInPlace(int[] nums, int k) {
+
+        if(nums.length == 1) return;
+
+        int count = 0;
+        int i = 0;
+        int temp1 = nums[0];
+
+        while(count < nums.length){
+            int newIndex = ((i+k)%(nums.length));
+
+            int temp2 = nums[newIndex]; // 5
+
+            nums[newIndex] = temp1; //5
+            i = newIndex;
+            count++;
+            temp1 = temp2;
+        }
+
+    }
+
     public static void main(String[] args) {
         Utils utils = new Utils();
-        rotate(utils.readArray("[1,2,3,4,5,6,7]"), 3);
+        rotateInPlace(utils.readArray("[-1,-100,3,99]"), 2);
     }
 }
