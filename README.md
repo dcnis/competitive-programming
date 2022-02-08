@@ -14,11 +14,18 @@ All coding examples are written in Java 11
 
 ### Map coordinates of 1-D array onto 2-D matrix
 
-2D[i/columns][i%columns]
+Map 1-D array
 
-e.q. <br>
-Columns of 2-D Matrix = 4;<br>
-element on 1D[5] = 2D[5/4][5%4] = 2D[1][1];
+| 1  | 2  | 3  | 4  |
+|---|---|---|---|
+
+to 2-D matrix
+
+| 1  | 2  |  3 |
+|---|---|---|
+|  4 | 5  |  6 |
+
+**2D [i/columns] [i%columns]**
 
 Practise problem: <br>
 74. Search a 2D Matrix https://leetcode.com/problems/search-a-2d-matrix/
