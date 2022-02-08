@@ -16,16 +16,32 @@ All coding examples are written in Java 11
 
 Map 1-D array
 
-| 1  | 2  | 3  | 4  |
-|---|---|---|---|
+| 0  | 1  | 2  | 3  | 4  | 5  |
+|---|---|---|---|---|---|
 
 to 2-D matrix
 
-| 1  | 2  |  3 |
+| 0  | 1  |  2 |
 |---|---|---|
-|  4 | 5  |  6 |
+|  3 | 4  |  5 |
 
 **2D [i/columns] [i%columns]**
 
 Practise problem: <br>
 74. Search a 2D Matrix https://leetcode.com/problems/search-a-2d-matrix/
+
+### Map coordinates of 2-D matrix onto 1-D array
+
+Map 2-D matrix 
+
+| 0  | 1  |  2 |
+|---|---|---|
+|  3 | 4  |  5 |
+
+to 1-D array
+
+| 0  | 1  | 2  | 3  | 4  | 5  |
+|---|---|---|---|---|---|
+
+**1D [i*column + j]**
+
