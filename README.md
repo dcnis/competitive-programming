@@ -19,3 +19,6 @@ All coding examples are written in Java 11
 e.q. <br>
 Columns of 2-D Matrix = 4;<br>
 element on 1D[5] = 2D[5/4][5%4] = 2D[1][1];
+
+Practise problem: <br>
+74. Search a 2D Matrix https://leetcode.com/problems/search-a-2d-matrix/
