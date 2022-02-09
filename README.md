@@ -78,3 +78,34 @@ to 1-D array
     } 
   } 
 ```
+
+
+### 3) Tree level traversal doing stuff for each level without level delimiter
+```
+        Queue<Node> q = new LinkedList<Node>(); 
+        q.offer(root);
+        
+        // Outer while loop which iterates over each level
+        while (!q.isEmpty()) {
+            
+            // Note the size of the queue
+            int size = q.size();
+            
+            // Iterate over all the nodes on the current level
+            for(int i = 0; i < size; i++) {
+                
+                // Pop a node from the front of the queue
+                Node node = q.poll();
+                
+                // do sth with the node
+                
+                if (node.left != null) {
+                    q.offer(node.left);
+                }
+                if (node.right != null) {
+                    q.offer(node.right);
+                }
+            }
+        }
+```
+
