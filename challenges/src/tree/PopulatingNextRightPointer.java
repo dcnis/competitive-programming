@@ -29,7 +29,42 @@ class Node {
 
 public class PopulatingNextRightPointer {
 
-    public Node connect(Node root) {
+    public Node connectVersion2(Node root){
+        if(root == null) return null;
+
+        Queue<Node> q = new LinkedList<>();
+
+        q.offer(root);
+        q.offer(null);
+
+        while(!q.isEmpty()){
+
+            Node node = q.poll();
+
+            if(node == null){
+                if(!q.isEmpty()){
+                    q.offer(null);
+                }
+            } else {
+
+                if(q.peek() != null){
+                    node.next = q.peek();
+                }
+
+                if(node.left != null){
+                    q.offer(node.left);
+                }
+
+                if(node.right != null){
+                    q.offer(node.right);
+                }
+            }
+
+        }
+
+        return root;
+    }
+    public Node connectVersion1(Node root) {
 
         if(root == null) return null;
 
