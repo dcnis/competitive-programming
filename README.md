@@ -12,6 +12,13 @@ All coding examples are written in Java 11
 
 # Cheat Sheet
 
+### 0) Time Complexity
+
+10<sup>3</sup> -> **O(n<sup>2</sup>)**<br>
+10<sup>5</sup> -> **O(nlogn)**<br>
+10<sup>7</sup> -> **O(n)**<br>
+10<sup>8</sup> -> **O(logn)**<br>
+
 ### 1) Map coordinates of 1-D array onto 2-D matrix
 
 Map 1-D array
@@ -80,7 +87,7 @@ to 1-D array
 ```
 
 
-### 3) Tree level traversal doing stuff for each level without level delimiter
+### 3) BFS doing stuff for each level without level delimiter
 ```
         Queue<Node> q = new LinkedList<Node>(); 
         q.offer(root);
