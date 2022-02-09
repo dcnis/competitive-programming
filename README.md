@@ -12,7 +12,7 @@ All coding examples are written in Java 11
 
 # Cheat Sheet
 
-### Map coordinates of 1-D array onto 2-D matrix
+### 1) Map coordinates of 1-D array onto 2-D matrix
 
 Map 1-D array
 
@@ -30,7 +30,7 @@ to 2-D matrix
 Practise problem: <br>
 74. Search a 2D Matrix https://leetcode.com/problems/search-a-2d-matrix/
 
-### Map coordinates of 2-D matrix onto 1-D array
+### 2) Map coordinates of 2-D matrix onto 1-D array
 
 Map 2-D matrix 
 
@@ -45,3 +45,36 @@ to 1-D array
 
 **1D [i*column + j]**
 
+### 3) Tree level traversal with level delimiter
+
+```
+    Queue<Node> q = new LinkedList<>(); 
+  
+    // Pushing root node into the queue. 
+    q.offer(root); 
+  
+    // Pushing delimiter into the queue. 
+    q.offer(null); 
+  
+    while (!q.isEmpty()) { 
+  
+      Node curr = q.poll(); 
+  
+      // condition to check the occurence of next level 
+      if (curr == null) { 
+        if (!q.isEmpty()) { 
+          q.offer(null);
+        } 
+      } else { 
+      
+        if (curr.left != null){
+          q.add(curr.left); 
+        }
+  
+        if (curr.right != null){
+          q.add(curr.right); 
+        }
+      } 
+    } 
+  } 
+```
