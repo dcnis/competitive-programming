@@ -139,3 +139,61 @@ n<sub>k</sub>.next.next = n<sub>k</sub>;
     }
 ```
 
+### 5) Find cycle in a graph
+
+- DFS with Backtracking
+- visited [T/F]
+
+### 6) Topolocal Sort with Kahn's Algorithm
+
+The intuition behind Kahn's algorithm is to repeatedly remove nodes with indegree of zero from the graph 
+and add them to the topological ordering. We remove nodes with indegree zero from the graph 
+until all nodes are processed or a cycle is discovered. 
+```
+        public int[] findOrder(int numCourses, int[][] prerequisites) {
+
+        if(numCourses == 1 ) return new int[1];
+        
+        HashMap<Integer, List<Integer>> adj = new HashMap<>();
+        Queue<Integer> q = new LinkedList<>();
+        int[] indegree = new int[numCourses];
+        List<Integer> order = new ArrayList<>();
+        
+        for(int i = 0; i < numCourses; i++){
+            adj.put(i, new ArrayList<>());
+        }
+        
+        for(int[] edge : prerequisites){
+            adj.get(edge[1]).add(edge[0]);
+            indegree[edge[0]]++;
+        }
+        
+        // Push every node with indegree=0 to queue
+        for(int i = 0; i < indegree.length; i++){
+            if(indegree[i] == 0){
+                q.offer(i);
+            }
+        }
+        
+        while(!q.isEmpty()){
+            
+            Integer courseNumber = q.poll();
+            order.add(courseNumber);
+            
+            for(int pre : adj.get(courseNumber)){
+                // decrease neighbour's indegree by one
+                indegree[pre]--;
+                
+                if(indegree[pre] == 0){
+                    q.offer(pre);
+                }
+            }
+        }
+        
+        if(order.size() != numCourses){
+            return new int[0];
+        }
+        
+        return order.stream().mapToInt(x -> x).toArray();
+    }
+```
