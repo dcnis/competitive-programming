@@ -116,3 +116,26 @@ to 1-D array
         }
 ```
 
+### 4) Reverse Linked List recursively 
+
+Assume from node nk+1 to nm had been reversed and you are at node nk.
+
+n<sub>1</sub> → … → n<sub>k-1</sub> → n<sub>k</sub> → n<sub>k+1</sub> ← … ← n<sub>m</sub>
+
+We want n<sub>k+1</sub>’s next node to point to n<sub>k</sub>.
+
+So,
+
+n<sub>k</sub>.next.next = n<sub>k</sub>;
+
+```
+    public ListNode reverseList(ListNode node) {
+        if(node == null || node.next == null) return node;
+        
+        ListNode tail = reverseList(node.next);
+        node.next.next = node;
+        node.next = null; 
+        return tail; 
+    }
+```
+
