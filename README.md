@@ -144,11 +144,36 @@ n<sub>k</sub>.next.next = n<sub>k</sub>;
 - DFS with Backtracking
 - visited [T/F]
 
+```
+    public boolean hasCycle(int vertex, int[] visited) {
+    
+    // set node currently visiting
+    visited[vertex] = 1;
+
+    for (Vertex neighbor : sourceVertex.getAdjacencyList()) {
+        // if we find an already visited vertex, ignore it
+        if(visited[neighbor] == 2) continue;
+        
+        if (visited[neighbor] == 1) {
+            // backward edge exists
+            return true;
+        } else if (hasCycle(neighbor)) {
+            return true;
+        }
+    }
+    
+    // set vertex visited
+    visited[vertex] = 2;
+    return false;
+}
+```
+
 ### 6) Topolocal Sort with Kahn's Algorithm
 
 The intuition behind Kahn's algorithm is to repeatedly remove nodes with indegree of zero from the graph 
 and add them to the topological ordering. We remove nodes with indegree zero from the graph 
 until all nodes are processed or a cycle is discovered. 
+
 ```
         public int[] findOrder(int numCourses, int[][] prerequisites) {
 
