@@ -1,5 +1,7 @@
 package leetcode.greedy;
 
+import leetcode.utils.Utils;
+
 /*
 *
 * */
@@ -43,12 +45,34 @@ public class JumpGameI {
     }
 
     /* 2ms */
-    public boolean canJumpGreedy(int[] nums) {
+    public static boolean canJumpGreedy(int[] nums) {
         int farthest = 0;
+
+        // we need "i <= farthest" otherwise if we use "i < nums.length",
+        // we will continue to increase farthest and it will return true for [0,2,3]
+
+        // we need && i < nums.length otherwise we would go out of bounce e.q. when farthest == 300
         for (int i = 0; i <= farthest && i < nums.length; ++i) {
             farthest = Math.max(farthest, i + nums[i]);
         }
         return farthest >= nums.length - 1;
+    }
+
+    public static boolean canJumpGreedyBackwards(int[] nums) {
+        int goal = nums.length-1;
+
+        for(int i = nums.length-2; i >= 0; i--){
+            if(i + nums[i] >= goal){
+                goal = i;
+            }
+        }
+
+        return goal == 0;
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println(canJumpGreedy(Utils.readArray("[2,3,1,1,4]")));
     }
 
 }
