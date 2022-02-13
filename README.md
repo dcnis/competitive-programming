@@ -222,3 +222,49 @@ until all nodes are processed or a cycle is discovered.
         return order.stream().mapToInt(x -> x).toArray();
     }
 ```
+
+### 7) Bitwise tricks
+
+How to get / isolate the rightmost 1-bit : **x & (-x)**
+
+How to turn off (= set to 0) the rightmost 1-bit : **x & (x - 1)**
+
+see for details: https://leetcode.com/problems/power-of-two/solution/ 
+
+Count the number of 1 Bits without using Java libraries
+
+We can check the i<sup>th</sup> bit of a number using a bit mask. We start with a mask m=1.
+```
+public int hammingWeight(int n) {
+    int bits = 0;
+    int mask = 1;
+    for (int i = 0; i < 32; i++) {
+        if ((n & mask) != 0) {
+            bits++;
+        }
+        mask <<= 1;
+    }
+    return bits;
+}
+```
+
+Bit Manipulation trick: 
+
+Repeatedly flip the least-significant 1-bit of n to 0 and add 1 to the sum. As soon as n becomes zero we know there are not more 1-bits. 
+How do we flip the least-significant 1-bit?
+
+```
+n = n & (n-1)
+```
+
+Code:
+```
+public int hammingWeight(int n) {
+    int count = 0;
+    while (n != 0) {
+        n &= (n - 1);
+        count++;
+    }
+    return count;
+}
+```
