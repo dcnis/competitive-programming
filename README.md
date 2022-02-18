@@ -268,3 +268,27 @@ public int hammingWeight(int n) {
     return count;
 }
 ```
+
+#### Bit Manipulation Trick for (136. Single Number)
+
+For [2,2,1] -> expect 1 in O(n) time and O(1) space.
+
+If we take XOR of zero and some bit, it will return that bit.<br>
+a⊕0=a
+
+If we take XOR of two same bits, it will return 0. <br>
+a⊕a=0
+
+a⊕b⊕a=(a⊕a)⊕b=0⊕b=b
+
+```
+class Solution {
+  public int singleNumber(int[] nums) {
+    int a = 0;
+    for (int i : nums) {
+      a ^= i;
+    }
+    return a;
+  }
+}
+```
