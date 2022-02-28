@@ -273,7 +273,7 @@ public int hammingWeight(int n) {
 
 For [2,2,1] -> expect 1 in O(n) time and O(1) space.
 
-If we take XOR of zero and some bit, it will return that bit.<br>
+If we take XOR of 0 and some bit, it will return that bit.<br>
 a⊕0=a
 
 If we take XOR of two same bits, it will return 0. <br>
@@ -292,3 +292,11 @@ class Solution {
   }
 }
 ```
+
+#### How to get the last (right-most) bit of n?
+
+Formular: n&1 <br>
+Example, if n=5 (101), n&1 = 101 & 001 = 001 = 1;<br>
+however, if n = 2 (10), n&1 = 10 & 01 = 00 = 0).
+
+Practice Problem: 190. Reverse Bits
