@@ -1,10 +1,6 @@
 package leetcode.graph;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-import java.util.TreeMap;
+import java.util.*;
 
 public class ListOfDepth {
 
@@ -33,7 +29,7 @@ public class ListOfDepth {
 
         Queue<Node> q = new LinkedList<>();
         root.level = 0;
-        depths.put(0, List.of(root));
+        depths.put(0, Arrays.asList(root));
         q.offer(root);
 
         while (!q.isEmpty()) {

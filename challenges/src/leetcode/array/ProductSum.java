@@ -1,6 +1,7 @@
 package leetcode.array;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ProductSum {
@@ -27,15 +28,15 @@ public class ProductSum {
 
     public static void main(String[] args) {
 
-        List<Object> listOne = List.of(1, 2, 3, 4, 5);
+        List<Object> listOne = Arrays.asList(1, 2, 3, 4, 5);
         System.out.println(productSum(listOne)); //should output 15
 
         List<Object> list = new ArrayList<>();
         list.add(5);
         list.add(2);
-        list.add(List.of(7, -1));
+        list.add(Arrays.asList(7, -1));
         list.add(3);
-        list.add(List.of(6, List.of(-13, 8), 4));
+        list.add(Arrays.asList(6, Arrays.asList(-13, 8), 4));
 
         System.out.println(productSum(list)); // should output 12
     }

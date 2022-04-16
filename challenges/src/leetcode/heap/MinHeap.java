@@ -1,6 +1,7 @@
 package leetcode.heap;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MinHeap {
@@ -88,7 +89,7 @@ public class MinHeap {
     }
 
     public static void main(String[] args) {
-        MyMinHeap program = new MyMinHeap(new ArrayList<>(List.of(48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41)));
+        MyMinHeap program = new MyMinHeap(new ArrayList<>(Arrays.asList(48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41)));
         program.insert(76);
         System.out.println(program.peek());
         System.out.println(program.remove());

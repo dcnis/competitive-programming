@@ -11,7 +11,7 @@ public class Utils {
 
         int[] array = new int[splitted.length];
         for(int i = 0; i < splitted.length; i++){
-            array[i] = Integer.parseInt(splitted[i].strip());
+            array[i] = Integer.parseInt(splitted[i].trim());
         }
         return array;
     }

@@ -1,6 +1,7 @@
 package leetcode.array;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MergeSortedArrays {
@@ -85,9 +86,9 @@ public class MergeSortedArrays {
     public static void main(String[] args) {
         List<List<Integer>> array = new ArrayList<>();
 
-        List<Integer> one = List.of(1, 5, 9, 21);
-        List<Integer> two = List.of(-1, 0);
-        List<Integer> four = List.of(3, 6, 12);
+        List<Integer> one = Arrays.asList(1, 5, 9, 21);
+        List<Integer> two = Arrays.asList(-1, 0);
+        List<Integer> four = Arrays.asList(3, 6, 12);
 
         array.add(one);
         array.add(two);

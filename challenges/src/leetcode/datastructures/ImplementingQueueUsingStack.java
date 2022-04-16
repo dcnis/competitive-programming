@@ -33,11 +33,11 @@ public class ImplementingQueueUsingStack {
         }
     }
 
-    public int pop() {
+    public Integer pop() {
         return !stack.isEmpty() ? stack.pop() : null;
     }
 
-    public int peek() {
+    public Integer peek() {
         return !stack.isEmpty() ? stack.peek() : null;
     }
 

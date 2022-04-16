@@ -5,15 +5,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.OptionalInt;
-import java.util.Queue;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -60,7 +52,7 @@ public class ComponentsInAGraph {
                 .mapToInt(element -> (int)element)
                 .min();
 
-        return List.of(min.getAsInt(), max.getAsInt());
+        return Arrays.asList(min.getAsInt(), max.getAsInt());
     }
 
     private static int bfs(Integer key){

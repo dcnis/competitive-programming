@@ -1,11 +1,6 @@
 package leetcode.sort;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class TopologicalSort {
 
@@ -96,8 +91,8 @@ public class TopologicalSort {
 
     public static void main(String[] args) {
 
-        List<Integer> jobs = List.of(1,2,3,4);
-        List<Integer[]> deps = List.of(
+        List<Integer> jobs = Arrays.asList(1,2,3,4);
+        List<Integer[]> deps = Arrays.asList(
                 new Integer[]{1,2},
                 new Integer[]{1, 3},
                 new Integer[]{3, 2},
@@ -108,8 +103,8 @@ public class TopologicalSort {
         // should return [1, 4, 3, 2]
         System.out.println(topologicalSort(jobs, deps));
 
-        jobs = List.of(1, 2, 3, 4, 5, 6, 7, 8);
-        deps = List.of(
+        jobs = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8);
+        deps = Arrays.asList(
                 new Integer[]{1,2},
                 new Integer[]{2, 3},
                 new Integer[]{3, 4},
