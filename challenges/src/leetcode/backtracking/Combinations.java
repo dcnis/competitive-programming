@@ -1,8 +1,6 @@
 package leetcode.backtracking;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /*
 * 77. Combinations
@@ -10,7 +8,7 @@ import java.util.List;
 * */
 public class Combinations {
 
-    public List<List<Integer>> combine(int n, int k) {
+    public static List<List<Integer>> combine(int n, int k) {
 
         List<List<Integer>> permutations = new ArrayList<>();
 
@@ -19,7 +17,7 @@ public class Combinations {
         return permutations;
     }
 
-    private void backtrack(int start, int n, int k, LinkedList<Integer> curr, List<List<Integer>> permutations){
+    private static void backtrack(int start, int n, int k, LinkedList<Integer> curr, List<List<Integer>> permutations){
 
         if(curr.size() == k){
             permutations.add(new LinkedList<>(curr));
