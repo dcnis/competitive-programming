@@ -34,6 +34,22 @@ public class CombinationSum {
         cur.removeLast();
 
         backtrack(i+1, cur, sum, solution, can, target);
+    }
+
+    private void backtrack(int first, LinkedList<Integer> cur, int sum, List<List<Integer>> solution, int[] can, int target){
+
+        if(sum == target){
+            solution.add(new ArrayList<>(cur));
+            return;
+        }
+
+        if(sum > target) return;
+
+        for(int i = first; i < can.length; i++){
+            cur.offer(can[i]);
+            backtrack(i, cur, sum+can[i], solution, can, target);
+            cur.removeLast();
+        }
 
     }
 
