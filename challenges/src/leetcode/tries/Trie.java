@@ -17,62 +17,42 @@ public class Trie {
     }
 
     public void insert(String word) {
-
         // find the first character
         Trie node = this;
         for(int i = 0; i < word.length(); i++){
             Character c = word.charAt(i);
             // if children do not have current character -> insert it
             Trie child = node.children.get(c);
-            if(child != null){
-                node = child;
-                if(i == word.length() - 1){
-                    node.isWord = true;
-                }
-            } else {
-                // insert
-                Trie newChild = new Trie();
-                if(i == word.length() - 1){
-                    newChild.isWord = true;
-                }
-                node.children.put(c, newChild);
-                node = newChild;
-            }
-        }
-    }
-
-    public boolean search(String word) {
-        Trie node = this;
-        for(int i = 0; i < word.length(); i++){
-            Character c = word.charAt(i);
-            Trie child = node.children.get(c);
             if(child == null){
-                return false;
+                node.children.put(c, new Trie());
             }
-            if(i == word.length() - 1){
-                return child.isWord;
-            }
-            node = child;
+            node =  node.children.get(c);
         }
-
-        return false;
+        node.isWord=true;
     }
 
-    public boolean startsWith(String prefix) {
+    private Trie searchPrefix(String prefix){
         Trie node = this;
-        for(int i = 0; i < prefix.length(); i++){
+        for (int i = 0; i < prefix.length(); i++){
             Character c = prefix.charAt(i);
             Trie child = node.children.get(c);
             if(child == null){
-                return false;
-            }
-            if(i == prefix.length() - 1){
-                return true;
+                return null;
             }
             node = child;
         }
 
-        return false;
+        return node;
+    }
+
+    public boolean search(String word) {
+        Trie node = searchPrefix(word);
+        return node != null && node.isWord;
+    }
+
+    public boolean startsWith(String prefix) {
+        Trie node = searchPrefix(prefix);
+        return node != null;
     }
 
     public static void main(String[] args) {
