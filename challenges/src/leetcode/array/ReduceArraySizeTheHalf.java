@@ -32,6 +32,6 @@ public class ReduceArraySizeTheHalf {
         Utils utils = new Utils();
         ReduceArraySizeTheHalf program = new ReduceArraySizeTheHalf();
         // should output 2
-        System.out.println(program.minSetSize(utils.readArray("[3,3,3,3,5,5,5,2,2,7]")));
+        System.out.println(program.minSetSize(utils.readIntArray("[3,3,3,3,5,5,5,2,2,7]")));
     }
 }

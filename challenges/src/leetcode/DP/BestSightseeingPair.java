@@ -79,6 +79,6 @@ public class BestSightseeingPair {
         boolean b = true;
 
         System.out.println(0 + "-" + b);
-        System.out.println(maxScoreSightseeingPair(Utils.readArray("[8,1,5,2,6]")));
+        System.out.println(maxScoreSightseeingPair(Utils.readIntArray("[8,1,5,2,6]")));
     }
 }

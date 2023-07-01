@@ -63,11 +63,11 @@ public class MoveZeroes {
 
 
     public static void main(String[] args) {
-        int[] nums = Utils.readArray("[0,1,0,3,12]");
+        int[] nums = Utils.readIntArray("[0,1,0,3,12]");
         moveZeroesSolution1(nums);
         System.out.println(Arrays.toString(nums)); // [1, 3, 12, 0, 0]
 
-        int[] nums2 = Utils.readArray("[0, 0, 12, 14, 0]");
+        int[] nums2 = Utils.readIntArray("[0, 0, 12, 14, 0]");
         moveZeroesSolution1(nums2);
         System.out.println(Arrays.toString(nums2)); // [12,14,0,0,0]
 

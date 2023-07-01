@@ -2,9 +2,6 @@ package pramp;
 
 import leetcode.utils.Utils;
 
-import java.io.*;
-import java.util.*;
-
 class DifferentNumber {
 
     static int getDifferentNumber(int[] arr) {
@@ -35,7 +32,7 @@ class DifferentNumber {
     }
 
     public static void main(String[] args){
-        System.out.println(getDifferentNumber(Utils.readArray("[0,5,4,1,3,2]")));
+        System.out.println(getDifferentNumber(Utils.readIntArray("[0,5,4,1,3,2]")));
     }
 
 }

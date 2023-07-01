@@ -40,6 +40,6 @@ public class FindPeakElement {
 
     public static void main(String[] args) {
         Utils utils = new Utils();
-        System.out.println(findPeakElement(utils.readArray("[1,2,1,3,5,6,4]"))); // expected output: 5
+        System.out.println(findPeakElement(utils.readIntArray("[1,2,1,3,5,6,4]"))); // expected output: 5
     }
 }

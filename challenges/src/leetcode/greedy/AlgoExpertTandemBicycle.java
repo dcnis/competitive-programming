@@ -78,7 +78,7 @@ public class AlgoExpertTandemBicycle {
 
     public static void main(String[] args) {
         System.out.println(Tag.GREEDY);
-        System.out.println(tandemBicycleSolution1(Utils.readArray("5, 5, 3, 9, 2"), Utils.readArray("3, 6, 7, 2, 1"), true)); // 32
+        System.out.println(tandemBicycleSolution1(Utils.readIntArray("5, 5, 3, 9, 2"), Utils.readIntArray("3, 6, 7, 2, 1"), true)); // 32
     }
 
 }

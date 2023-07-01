@@ -22,6 +22,6 @@ public class PrefixSum {
 
     public static void main(String[] args) {
         System.out.println("Expected: [10, 30, 40, 45, 60]");
-        System.out.println(Arrays.toString(fillPrefixSum(Utils.readArray("10, 20, 10, 5, 15"))));
+        System.out.println(Arrays.toString(fillPrefixSum(Utils.readIntArray("10, 20, 10, 5, 15"))));
     }
 }

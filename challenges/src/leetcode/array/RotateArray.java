@@ -63,6 +63,6 @@ public class RotateArray {
 
     public static void main(String[] args) {
         Utils utils = new Utils();
-        rotateInPlace(utils.readArray("[-1,-100,3,99]"), 2);
+        rotateInPlace(utils.readIntArray("[-1,-100,3,99]"), 2);
     }
 }

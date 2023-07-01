@@ -64,9 +64,9 @@ public class IntersectionOfTwoArrays {
 
     public static void main(String[] args) {
         // [2, 2]
-        System.out.println(Arrays.toString(intersect(Utils.readArray("[1,2,2,1]"), Utils.readArray("[2,2]"))));
+        System.out.println(Arrays.toString(intersect(Utils.readIntArray("[1,2,2,1]"), Utils.readIntArray("[2,2]"))));
 
         // [9, 4]
-        System.out.println(Arrays.toString(intersectWithHashMap(Utils.readArray("[4,9,5]"), Utils.readArray("[9,4,9,8,4]"))));
+        System.out.println(Arrays.toString(intersectWithHashMap(Utils.readIntArray("[4,9,5]"), Utils.readIntArray("[9,4,9,8,4]"))));
     }
 }

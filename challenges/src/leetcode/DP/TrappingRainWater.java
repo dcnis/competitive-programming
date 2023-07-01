@@ -66,11 +66,11 @@ public class TrappingRainWater {
     }
 
     public static void main(String[] args) {
-        System.out.println(trapBruteForce(Utils.readArray("[0,1,0,2,1,0,1,3,2,1,2,1]"))); // 6
-        System.out.println(trapBruteForce(Utils.readArray("[4,2,0,3,2,5]"))); // 9
+        System.out.println(trapBruteForce(Utils.readIntArray("[0,1,0,2,1,0,1,3,2,1,2,1]"))); // 6
+        System.out.println(trapBruteForce(Utils.readIntArray("[4,2,0,3,2,5]"))); // 9
         System.out.println();
-        System.out.println(trapDP(Utils.readArray("[0,1,0,2,1,0,1,3,2,1,2,1]"))); // 6
-        System.out.println(trapDP(Utils.readArray("[4,2,0,3,2,5]"))); // 9
+        System.out.println(trapDP(Utils.readIntArray("[0,1,0,2,1,0,1,3,2,1,2,1]"))); // 6
+        System.out.println(trapDP(Utils.readIntArray("[4,2,0,3,2,5]"))); // 9
 
 
     }

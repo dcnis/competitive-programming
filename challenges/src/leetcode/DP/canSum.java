@@ -36,17 +36,17 @@ public class canSum {
     }
 
     public static void main(String[] args) {
-        System.out.println(canSum(Utils.readArray("[0]"), 1)); // false
-        System.out.println(canSum(Utils.readArray("[0,0,0,0]"), 1)); // false
-        System.out.println(canSum(Utils.readArray("[3,0,0,0]"), 2)); // false
+        System.out.println(canSum(Utils.readIntArray("[0]"), 1)); // false
+        System.out.println(canSum(Utils.readIntArray("[0,0,0,0]"), 1)); // false
+        System.out.println(canSum(Utils.readIntArray("[3,0,0,0]"), 2)); // false
 
-        System.out.println(canSum(Utils.readArray("[1,0,0,0]"), 2)); // true
-        System.out.println(canSum(Utils.readArray("[1,1,1,1]"), 3)); // true
-        System.out.println(canSum(Utils.readArray("[1,1,1,1]"), 4)); // true
-        System.out.println(canSum(Utils.readArray("[1,2,3,4]"), 6)); // true
-        System.out.println(canSum(Utils.readArray("[1,2,3,4]"), 7)); // true
-        System.out.println(canSum(Utils.readArray("[1,2,3,4]"), 10)); // true
-        System.out.println(canSum(Utils.readArray("[1,2,3,4]"), 11)); // true
+        System.out.println(canSum(Utils.readIntArray("[1,0,0,0]"), 2)); // true
+        System.out.println(canSum(Utils.readIntArray("[1,1,1,1]"), 3)); // true
+        System.out.println(canSum(Utils.readIntArray("[1,1,1,1]"), 4)); // true
+        System.out.println(canSum(Utils.readIntArray("[1,2,3,4]"), 6)); // true
+        System.out.println(canSum(Utils.readIntArray("[1,2,3,4]"), 7)); // true
+        System.out.println(canSum(Utils.readIntArray("[1,2,3,4]"), 10)); // true
+        System.out.println(canSum(Utils.readIntArray("[1,2,3,4]"), 11)); // true
 
     }
 

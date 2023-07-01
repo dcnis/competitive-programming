@@ -2,7 +2,7 @@ package leetcode.utils;
 
 public class Utils {
 
-    public static int[] readArray(String arrayAsString){
+    public static int[] readIntArray(String arrayAsString){
 
         if(arrayAsString.contains("[")){
             arrayAsString = arrayAsString.substring(1, arrayAsString.length()-1);
@@ -16,6 +16,15 @@ public class Utils {
         return array;
     }
 
+    public static String[] readStringArray(String arrayAsString){
+
+        if(arrayAsString.contains("[")){
+            arrayAsString = arrayAsString.substring(2, arrayAsString.length()-2);
+        }
+        return arrayAsString.split("\",\"");
+    }
+
+
     public static int[][] read2DArray(String twoDarray){
         String removeBrackets = twoDarray.substring(1, twoDarray.length()-1);
         String[] splitted = removeBrackets.split("]");
@@ -24,7 +33,7 @@ public class Utils {
         for(int i = 0; i < splitted.length; i++){
             splitted[i] = splitted[i].replace(",[", "[");
             splitted[i] += "]";
-            result[i] = readArray(splitted[i]);
+            result[i] = readIntArray(splitted[i]);
 
         }
 
@@ -33,7 +42,7 @@ public class Utils {
 
     public static void main(String[] args) {
         Utils utils = new Utils();
-        utils.readArray("[8, 5, 2, 9, 5, 6, 3]");
+        utils.readIntArray("[8, 5, 2, 9, 5, 6, 3]");
         utils.read2DArray("[[1,3,5,7],[10,11,16,20],[23,30,34,60]]");
     }
 }

@@ -27,7 +27,7 @@ public class MaximumSubarray {
     }
 
     public static void main(String[] args) {
-        System.out.println(maxSubArrayConstantTime(Utils.readArray("[5,-3]")));
+        System.out.println(maxSubArrayConstantTime(Utils.readIntArray("[5,-3]")));
     }
 
 

@@ -72,7 +72,7 @@ public class JumpGameI {
 
 
     public static void main(String[] args) {
-        System.out.println(canJumpGreedy(Utils.readArray("[2,3,1,1,4]")));
+        System.out.println(canJumpGreedy(Utils.readIntArray("[2,3,1,1,4]")));
     }
 
 }

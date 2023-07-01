@@ -63,8 +63,8 @@ public class HouseRobber {
     }
 
     public static void main(String[] args) {
-        System.out.println(robBottomDown(Utils.readArray("[1,2,3,1]"))); // 4
-        System.out.println(robBottomDown(Utils.readArray("[2,7,9,3,1]"))); // 12
+        System.out.println(robBottomDown(Utils.readIntArray("[1,2,3,1]"))); // 4
+        System.out.println(robBottomDown(Utils.readIntArray("[2,7,9,3,1]"))); // 12
     }
 
 }
