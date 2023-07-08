@@ -7,52 +7,56 @@ import java.util.Map;
  * 208. Implement Trie (Prefix Tree)
  * https://leetcode.com/problems/implement-trie-prefix-tree/
  */
-public class Trie {
-    private Map<Character, Trie> children;
-    private boolean isWord;
+class Trie {
+
+    static class TrieNode {
+        Map<Character, TrieNode> children;
+        boolean isWord;
+
+        public TrieNode(){
+            this.children = new HashMap<>();
+            this.isWord = false;
+        }
+    }
+
+    TrieNode root;
 
     public Trie() {
-        this.children = new HashMap<>();
-        isWord = false;
+        this.root = new TrieNode();
     }
 
     public void insert(String word) {
-        // find the first character
-        Trie node = this;
-        for(int i = 0; i < word.length(); i++){
-            Character c = word.charAt(i);
-            // if children do not have current character -> insert it
-            Trie child = node.children.get(c);
-            if(child == null){
-                node.children.put(c, new Trie());
-            }
-            node =  node.children.get(c);
-        }
-        node.isWord=true;
-    }
+        TrieNode node = this.root;
 
-    private Trie searchPrefix(String prefix){
-        Trie node = this;
-        for (int i = 0; i < prefix.length(); i++){
-            Character c = prefix.charAt(i);
-            Trie child = node.children.get(c);
-            if(child == null){
-                return null;
+        for(Character c : word.toCharArray()) {
+            TrieNode letter = node.children.get(c);
+            if(letter == null){
+                node.children.put(c, new TrieNode());
             }
-            node = child;
+            node = node.children.get(c);
         }
-
-        return node;
+        node.isWord = true;
     }
 
     public boolean search(String word) {
-        Trie node = searchPrefix(word);
-        return node != null && node.isWord;
+        TrieNode lastNode = getLastNodeOfPrefix(word);
+        return lastNode != null && lastNode.isWord;
     }
 
     public boolean startsWith(String prefix) {
-        Trie node = searchPrefix(prefix);
-        return node != null;
+        return getLastNodeOfPrefix(prefix) != null;
+    }
+
+    public TrieNode getLastNodeOfPrefix(String prefix){
+        TrieNode node = this.root;
+
+        for(Character c : prefix.toCharArray()){
+            TrieNode letter = node.children.get(c);
+            if(letter == null) return null;
+            node = letter;
+        }
+
+        return node;
     }
 
 }

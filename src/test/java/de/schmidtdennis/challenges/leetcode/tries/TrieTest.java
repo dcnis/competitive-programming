@@ -2,12 +2,11 @@ package de.schmidtdennis.challenges.leetcode.tries;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.junit.jupiter.MockitoSettings;
 
 
-@ExtendWith(MockitoExtension.class)
+@MockitoSettings
 class TrieTest {
 
     @InjectMocks
