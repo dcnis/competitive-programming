@@ -5,27 +5,24 @@ import java.util.List;
 
 public class HowSum {
 
-    public List<List<Integer>> howSum(int[] nums, int target){
-
-        List<List<Integer>> answer = new ArrayList<>();
-        howSum(new ArrayList<>(), nums, target, answer);
-        return answer;
+    public List<Integer> howSum(int[] nums, int target){
+        return howSum(target, nums);
     }
 
-    private void howSum(List<Integer> cur, int[] nums, int target, List<List<Integer>> answer){
+    private List<Integer> howSum(int target, int[] nums){
 
-        if(target < 0) return;
-        if(target == 0){
-            answer.add(new ArrayList<>(cur));
-            return;
-        }
+        if(target < 0) return null;
+        if(target == 0) return new ArrayList<>();
 
         for(int i = 0; i < nums.length; i++){
-            cur.add(nums[i]);
-            howSum(cur, nums, target - nums[i], answer);
-            cur.remove(cur.size()-1);
+            List<Integer> arr = howSum(target - nums[i], nums);
+            if(arr != null){
+                arr.add(nums[i]);
+                return arr;
+            }
         }
 
+        return null;
     }
 
 }

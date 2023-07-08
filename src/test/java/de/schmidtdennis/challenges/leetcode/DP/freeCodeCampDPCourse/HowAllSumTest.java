@@ -7,17 +7,17 @@ import org.mockito.junit.jupiter.MockitoSettings;
 import java.util.List;
 
 @MockitoSettings
-class HowSumTest {
+class HowAllSumTest {
 
     @InjectMocks
-    private HowSum testee;
+    private HowAllSum testee;
 
     @Test
     public void test(){
         // GIVEN
 
         // WHEN
-        List<Integer> integers = testee.howSum(new int[]{2, 3}, 8);
+        List<List<Integer>> integers = testee.howAllSum(new int[]{2, 3}, 8);
 
         // THEN
         System.out.println(integers);
